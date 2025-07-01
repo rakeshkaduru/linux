@@ -1525,9 +1525,9 @@ int main()
 		printf("failed to rename");
 	}
 }
-    ```
+```
 56. Write a C program to copy the contents of one file to another file?
-    ```
+```
 
 #include<stdio.h>
 int main()
@@ -1556,11 +1556,11 @@ int main()
 	fclose(dest);
 	return 0;
 }
-    ```
+ ```
 
 
 57. Develop a C program to move a file named "file.txt" to a directory named "Backup"?
-    ```
+ ```
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -1576,9 +1576,9 @@ int main() {
 
     return 0;
 }
- ```
+```
 58. Implement a C program to list all files and directories in the current directory?
- ```
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
@@ -1604,7 +1604,7 @@ int main() {
 
     return 0;
 }
- ```
+```
 
 59. Write a C program to get the size of a file named "data.txt"?
 ```
@@ -1915,6 +1915,7 @@ int main() {
 }
 ```
 73. Write a C program to get the last access time of a file named "data.txt"?
+```
 #include <stdio.h>
 #include <sys/stat.h>
 #include <time.h>
@@ -2089,7 +2090,6 @@ int main() {
     return 0;
 }
 ```
-
 79. Implement a C program to create a new directory named "Logs" and move all files with the ".log" extension into it?
 ```
 #include <stdio.h>
@@ -2159,7 +2159,6 @@ int main() {
     return 0;
 }
 ```
-
 81. Develop a C program to read the contents of a text file named "instructions.txt" and execute the instructions as shell commands?
 ```
 #include <stdio.h>
@@ -2174,7 +2173,6 @@ int main() {
         perror("Error opening instructions.txt");
         return 1;
     }
-
 
         while (fgets(command, sizeof(command), file) != NULL) {
         command[strcspn(command, "\n")] = '\0';
@@ -2248,7 +2246,6 @@ void copy_file(const char *src, const char *dst) {
     int out = open(dst, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     char buf[1024];
     int n;
-
     while ((n = read(in, buf, sizeof(buf))) > 0) {
         write(out, buf, n);
     }
@@ -2256,7 +2253,6 @@ void copy_file(const char *src, const char *dst) {
     close(in);
     close(out);
 }
-
 void copy_dir(const char *src, const char *dst) {
     mkdir(dst, 0755);
     DIR *d = opendir(src);
@@ -2281,7 +2277,6 @@ void copy_dir(const char *src, const char *dst) {
 
     closedir(d);
 }
-
 int main() {
     copy_dir("source_dir", "target_dir");
     printf("Copy done.\n");
@@ -2294,7 +2289,6 @@ int main() {
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
 int main() {
     char path[256];
     struct stat info;
