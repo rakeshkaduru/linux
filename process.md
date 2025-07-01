@@ -340,7 +340,7 @@ void main()
         scanf("%s",shmptr);
 
 }
-
+```
 49. Write a C program to create a child process using vfork() and demonstrate its usage.
 ```
 #include <stdio.h>
