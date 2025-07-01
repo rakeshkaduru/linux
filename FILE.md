@@ -18,7 +18,7 @@ void main()
         }
         printf("file opened sucessfully\n");
         ret=write(fd,buf,strlen(buf));
-//ret=read(fd,buf,64);
+
         if(ret<0)
         {
                 printf("failed to read\n");
@@ -29,7 +29,8 @@ void main()
         close(fd);
 }
 ```
-//2. Develop a C program to open an existing text file and display its contents?
+2. Develop a C program to open an existing text file and display its contents?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -47,7 +48,7 @@ void main()
                 return ;
         }
         printf("file opened sucessfully\n");
-//        ret=write(fd,buf,strlen(buf));
+
 ret=read(fd,buf,64);
         if(ret<0)
         {
@@ -58,7 +59,7 @@ ret=read(fd,buf,64);
         printf("read %d bytes from file%s\n",ret,buf);
         close(fd);
 }
-
+```
 //3. Implement a C program to create a new directory named "Test" in the current directory?
 #include<stdio.h>
 #include<sys/stat.h> //mkdir
