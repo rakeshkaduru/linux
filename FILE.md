@@ -1179,6 +1179,7 @@ int main() {
 }
 ```
 43. Develop a C program to check if a file named "config.ini" is writable?
+```
 #include <stdio.h>
 #include <unistd.h>  // For access()
 
@@ -1228,8 +1229,9 @@ int main() {
     fclose(file);
     return 0;
 }
-
-//45. Write a C program to get the number of hard links to a file named "file.txt"?
+```
+45. Write a C program to get the number of hard links to a file named "file.txt"?
+```
 #include <stdio.h>
 #include <sys/stat.h>
 
@@ -1439,7 +1441,7 @@ int main() {
 }
 ```
 52. Implement a C program to open a file named "data.txt" in read mode and display its contents?
-    ```
+ ```
 #include <stdio.h>
 
 int main() {
@@ -1459,7 +1461,7 @@ int main() {
     fclose(fp);
     return 0;
 }
-    ```
+  ```
 
 53. Write a C program to create a new text file named "output.txt" and write "Hello, World!" to it?
     ```
