@@ -122,7 +122,7 @@ int main() {
 }
 ```
 7. Write a C program to copy the contents of one file to another?
-   ```
+ ```
 #include <stdio.h>
 
 int main() {
