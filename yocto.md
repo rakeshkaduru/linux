@@ -63,7 +63,7 @@ Includes kernel images, root filesystem, bootloader binaries, etc.
 4. System Image(s)
 A System Image is created from the binaries.
 
-This image is what runs on the target embedded hardware (e.g., .img, .bin, .elf files).
++This image is what runs on the target embedded hardware (e.g., .img, .bin, .elf files).
 
 Can be written to SD card, eMMC, or directly flashed.
 
@@ -77,21 +77,14 @@ Example: Rockchip, Raspberry Pi, or custom SoC.
 6. Terminal Output (Debugging)
 The terminal at the bottom represents:
 This refers to the console output used for monitoring and debugging the build and runtime behavior of the system.
-
 Logs from the build system (useful for debugging build errors).
-
 Serial/SSH output from the board for runtime debugging.
 
 
 🔄 Flow Summary:
 Write or gather source code.
-
 Use Yocto's build system (BitBake + OpenEmbedded + Toolchain) to compile it.
-
 Get output binaries.
-
 Generate a custom Linux system image.
-
 Load it onto embedded hardware.
-
 Test/debug via the terminal/console
