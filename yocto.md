@@ -18,6 +18,9 @@ Better Security
 Full Control
 ```
 
+🧱 Yocto Project Architecture (Overview)
+
+This diagram gives a high-level overview of how the Yocto Project is used to build custom Linux system images for embedded systems 
 
 ⚙️ BitBake in Yocto Project
 
