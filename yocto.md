@@ -1,13 +1,13 @@
-what is yocto ?
+ WHAT IS YACTO?
 ```
  Yocto is a tool to create your own custom Linux operating system
 ```
-what is a custom linux os?
+WHAT IS CUSTOM LINUX OS?
 ```
 A Custom Linux OS means a Linux operating system that you build or modify yourself, so it includes only the features you need
 ```
 
-🔧 Why Build a Custom Linux OS?
+🔧 WHY A NEED BUILD CUSTOM OS?
 ```
 Because for embedded systems (like IoT, robots, or cars), you don’t need a full OS like Ubuntu.
 You need:
@@ -136,5 +136,82 @@ This diagram shows the **build steps** performed by **BitBake** when it processe
 ## 🧠 Simple Summary
 
 > BitBake processes a recipe by performing a **series of tasks** — from **downloading source code** to **packaging it** — so it can be used in custom Linux systems for embedded hardware.
+
+# 📊 Comparison: Tasks in Embedded Systems vs Yocto Project Architecture
+
+---
+
+## 🧱 "Tasks in Embedded Systems"
+
+### 🔍 Focus:
+- Low-level build steps BitBake performs while processing one software component.
+- Explains the **step-by-step process** for a single package (like `busybox`, `nginx`, etc.).
+
+### 📌 Main Tasks:
+- **Fetch**
+- **Decompress**
+- **Patch**
+- **Configure**
+- **Compile**
+- **Install**
+- **Deploy & Package**
+- **QA**
+
+### ✅ Purpose:
+- To explain **BitBake task flow** (recipe processing for one package).
+- More focused on **internals of a single build**.
+
+
+
+---
+
+## 🏗️ "Yocto Project Architecture"
+
+### 🔍 Focus:
+- High-level **architecture** of the entire Yocto build system.
+- Shows how multiple **layers and configurations** come together to produce:
+  - Full system images
+  - SDKs
+  - Package feeds
+
+### 📌 Main Components:
+- **Inputs**: User configs, Metadata, BSP, Policies
+- **Source**: Git/SVN/local mirrors
+- **BitBake Build Flow**: Fetch, Patch, Compile, QA, Package
+- **Outputs**:
+  - `.rpm`, `.ipk`, `.deb`
+  - Full Linux system image
+  - Application Development SDK
+
+### ✅ Purpose:
+- To show how Yocto builds an **entire Linux system**, not just one package.
+- Includes:
+  - **BSP** (Board Support Package)
+  - **Image creation**
+  - **SDK generation**
+  - **Package feeds**
+
+---
+
+## ✅ Key Differences Table
+
+| Feature     | First Diagram (Tasks in Embedded Systems) | Second Diagram (Yocto Project Architecture) |
+|-------------|--------------------------------------------|---------------------------------------------|
+| 🎯 Focus    | Tasks to build one package                | Entire Yocto system architecture            |
+| 🔧 Level    | Low-level, task-specific                  | High-level, system-wide                     |
+| 🧩 Scope    | Fetch → Package of one component          | Configs → Recipes → Full OS image + SDK     |
+| ⚙ Tool     | BitBake task execution                    | Yocto + OpenEmbedded build system           |
+| 📤 Output   | Package (.ipk, .rpm, .deb)                | Image, SDK, full package feed               |
+
+---
+
+## 🧠 Summary
+
+- **First diagram** = zoomed-in view of building **one software package**.
+- **Second diagram** = zoomed-out view of building an **entire embedded OS** with many packages.
+
+---
+
+Let me know if you'd like a real-life example traced through both diagrams!
 
 
