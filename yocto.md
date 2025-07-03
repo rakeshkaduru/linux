@@ -94,6 +94,93 @@ BitBake is the **build engine** at the heart of the **Yocto Project**.
 > BitBake + OpenEmbedded + Toolchain form the **Yocto Build System**.  
 > BitBake **processes recipes** to automate the entire build and packaging pipeline for custom embedded Linux systems.
 
+### 1. 📄 Source Code
+
+- You start with **source code** — this includes:
+  - Kernel source
+  - Drivers
+  - Bootloader
+  - Libraries
+  - Applications
+- This is written by the developer or pulled from open source.
+
+---
+
+### 2. ⚙ Build System (Yocto Build System)
+
+This is the **heart of the process**, made up of:
+
+#### a. Build Engine
+
+- Core engine that runs the build.
+- Uses **BitBake** (like `make`) to **process recipes** (instructions).
+- A recipe tells BitBake **how to fetch, configure, compile, and package** software.
+
+#### b. Toolchain (Compiler)
+
+- Includes cross-compilers like GCC for ARM, RISC-V, etc.
+- Converts source code into target binaries.
+
+#### c. OpenEmbedded Layer
+
+- Organizes build metadata (recipes, configs, classes).
+- Layers make builds modular and reusable.
+
+🧠 The Build System takes the source code and **compiles it using the toolchain** under control of **BitBake**.
+
+---
+
+### 3. 📁 Output Folder (Binaries)
+
+- Compiled binaries are stored here.
+- Includes:
+  - Kernel image
+  - Bootloader
+  - Root filesystem
+  - Libraries, tools
+
+---
+
+### 4. 🖼️ System Image(s)
+
+- System image is generated from the output binaries.
+- Example: `.img`, `.bin`, `.elf`
+- Can be written to:
+  - SD card
+  - eMMC
+  - Flashed directly to device
+
+---
+
+### 5. 💻 Target Hardware (Embedded Board)
+
+- The physical embedded device.
+- Example: Raspberry Pi, Rockchip, custom SoC boards.
+- The image is **deployed** to the board to **run**.
+
+---
+
+### 6. 🧪 Terminal Output (Debugging)
+
+- Logs from the build system.
+- Serial/SSH output from the device during runtime.
+- Useful for **monitoring and debugging**.
+
+---
+
+## 🔄 Flow Summary
+
+1. Write or gather source code.  
+2. Use Yocto's build system (**BitBake + OpenEmbedded + Toolchain**) to compile it.  
+3. Get output binaries.  
+4. Generate a **custom Linux system image**.  
+5. Load it onto embedded hardware.  
+6. Test/debug via the terminal/console.
+
+---
+
+✅ Result: A lightweight, efficient, and customized Linux OS image ready to run on your embedded device.
+
 
 
 
