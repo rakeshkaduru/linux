@@ -88,3 +88,52 @@ Get output binaries.
 Generate a custom Linux system image.
 Load it onto embedded hardware.
 Test/debug via the terminal/console
+
+
+
+
+
+# 📌 Explanation of Diagram: Tasks in Embedded Systems (Yocto/BitBake Flow)
+
+This diagram shows the **build steps** performed by **BitBake** when it processes a recipe (`.bb` file) in the **Yocto Project** for building software packages in embedded systems.
+
+---
+
+## 🧱 Step-by-Step Task Flow:
+
+| Step             | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| **1. Fetch**     | BitBake **downloads the source code** (from Git, HTTP, mirrors, etc.).     |
+| **2. Decompress**| The downloaded archive (e.g., `.tar.gz`) is **extracted/unpacked**.         |
+| **3. Patch**     | Any **patches specified in the recipe** are applied to the source code.     |
+| **4. Configure** | The build system is configured for **target hardware/platform**.            |
+| **5. Compile**   | The source is **compiled** using compilers (e.g., GCC) to create binaries.  |
+| **6. Install**   | The compiled binaries are **installed** into a temporary staging area.      |
+| **7. Package**   | The output is packaged into **deployable formats** like `.rpm`, `.deb`, `.ipk`. |
+| **8. QA**        | (Optional) **Quality checks/tests** are run to validate the build.          |
+
+---
+
+## 🔁 Red Arrows in the Diagram
+
+- Show **fallbacks or re-runs**.
+- Example: If configuration fails after compilation starts, it loops back to **Configure**.
+
+---
+
+## ✅ Final Result (Output)
+
+- Successfully built and tested software **packaged** for embedded Linux systems.
+- Output formats include: `.rpm`, `.ipk`, `.deb`
+- These can be used for:
+  - Installing onto embedded devices
+  - Image generation in Yocto
+  - Application development
+
+---
+
+## 🧠 Simple Summary
+
+> BitBake processes a recipe by performing a **series of tasks** — from **downloading source code** to **packaging it** — so it can be used in custom Linux systems for embedded hardware.
+
+
