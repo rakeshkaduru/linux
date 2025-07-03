@@ -52,7 +52,6 @@ BitBake is the **build engine** at the heart of the **Yocto Project**.
 ---
 
 ## 🧱 Diagram Overview: Yocto Build System Flow
-
 ![Yocto Build Diagram](Screenshot_2025-07-03_185821.png)
 
 ### 📋 Key Components in the Diagram:
