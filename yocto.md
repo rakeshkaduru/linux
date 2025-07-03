@@ -54,45 +54,8 @@ BitBake is the **build engine** at the heart of the **Yocto Project**.
 
 ---
 
-## 🧱 Diagram Overview: Yocto Build System Flow
-![Yocto Build Diagram](Screenshot_2025-07-03_185821.png)
 
-### 📋 Key Components in the Diagram:
 
-1. **Source Code**
-   - Original code written or imported.
-   - Includes kernel, apps, bootloader, drivers.
-
-2. **Build System**
-   - Contains:
-     - **Build Engine (BitBake)**
-     - **Toolchain** (cross-compilers like GCC for ARM)
-     - Uses **OpenEmbedded** metadata layers.
-
-3. **Output Folder (Binaries)**
-   - Stores compiled code:
-     - Kernel image
-     - Bootloader
-     - Root filesystem
-
-4. **System Image(s)**
-   - Final output: `.img`, `.elf`, or `.bin` files.
-   - Ready to flash onto hardware.
-
-5. **Target Hardware**
-   - Actual embedded board (e.g., Rockchip module).
-   - Image is flashed and run on the board.
-
-6. **Terminal**
-   - Shows logs and output text.
-   - Useful for debugging build and runtime behavior.
-
----
-
-## 🧠 Summary
-
-> BitBake + OpenEmbedded + Toolchain form the **Yocto Build System**.  
-> BitBake **processes recipes** to automate the entire build and packaging pipeline for custom embedded Linux systems.
 
 ### 1. 📄 Source Code
 
