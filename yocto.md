@@ -145,6 +145,56 @@ This is the **heart of the process**, made up of:
 ✅ Result: A lightweight, efficient, and customized Linux OS image ready to run on your embedded device.
 
 
+# 🔄 Flow Diagram Explanation: Yocto Project
+
+## 🔵 1. Arch Linux (Host OS)
+
+This is your **host development environment**.
+
+You use a Linux distro like **Arch Linux**, **Ubuntu**, or any other to **run the Yocto build system**.
+
+> ⚠️ **Note:** Yocto does **not replace** the host OS — it **runs on top of it**.
+
+---
+
+## 🔴 2. Poky (Build Toolchain & Metadata)
+
+**Poky** is the **reference distribution** of the **Yocto Project**.  
+It provides the **core components** needed to build your own **custom embedded Linux system**.
+
+📌 Think of **Poky** as the **“starter kit”** or **foundation** provided by Yocto.
+
+### 🔧 Poky Contains 3 Key Parts:
+
+| Part                       | Description                                                                          |
+|----------------------------|--------------------------------------------------------------------------------------|
+| 🧠 **BitBake**             | The **build engine**. It executes tasks (like fetch, compile, install).              |
+| 📂 **Metadata**            | Recipes (`.bb` files), classes, and layers to describe how to build software.        |
+| 🧰 **Reference Configuration** | A sample working configuration and distro (for learning or starting point).     |
+
+> ✅ **Poky = BitBake (engine) + Metadata (blueprints) + Sample Distro (Poky config)**  
+> Poky is the **backbone** of any Yocto build system and the **starting point** for creating a custom Linux OS.
+
+---
+
+## ⚫ 3. Your Own Distro
+
+After running Poky with your configuration, you generate:
+
+- A **custom embedded Linux distribution**
+- Tailored for your **target hardware** (like Raspberry Pi, NXP board, etc.)
+- Includes **only required packages** → Lightweight & optimized
+
+### 🎯 Example Output:
+- 🧩 **Kernel image**
+- 📦 **Root filesystem**
+- 🔧 **Bootloader**
+- 🛠️ **SDK**
+
+---
+
+> ✅ This is how you go from a **general-purpose Host OS**, through **Poky**, to your own **target-specific embedded OS**.
+
 
 
 # 📌 Explanation of Diagram: Tasks in Embedded Systems (Yocto/BitBake Flow)
@@ -264,6 +314,8 @@ This diagram shows the **build steps** performed by **BitBake** when it processe
 - **Second diagram** = zoomed-out view of building an **entire embedded OS** with many packages.
 
 ---
+
+
 
 Let me know if you'd like a real-life example traced through both diagrams!
 
