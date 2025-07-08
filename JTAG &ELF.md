@@ -222,3 +222,13 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 ---
 
 
+# Comparison: ELF vs JTAG
+
+| Aspect     | ELF (Executable and Linkable Format)                                 | JTAG (Joint Test Action Group)                                               |
+|------------|----------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **What it is** | A file format for executables and object code                       | A hardware interface/protocol for debugging, testing, and programming chips  |
+| **Domain**     | Software – OS, compilers, linkers                                   | Hardware – microcontrollers, processors, FPGAs                               |
+| **Used for**   | Storing code, data, symbols in binaries                              | Communicating with chips for testing, debugging, programming                 |
+| **Standard**   | Part of OS/compiler toolchains (Linux, GCC)                         | IEEE 1149.1 (Boundary Scan standard)                                         |
+
+
