@@ -222,13 +222,22 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 ---
 
 
-# Comparison: ELF vs JTAG
 
-| Aspect     | ELF (Executable and Linkable Format)                                 | JTAG (Joint Test Action Group)                                               |
-|------------|----------------------------------------------------------------------|------------------------------------------------------------------------------|
-| **What it is** | A file format for executables and object code                       | A hardware interface/protocol for debugging, testing, and programming chips  |
-| **Domain**     | Software – OS, compilers, linkers                                   | Hardware – microcontrollers, processors, FPGAs                               |
-| **Used for**   | Storing code, data, symbols in binaries                              | Communicating with chips for testing, debugging, programming                 |
-| **Standard**   | Part of OS/compiler toolchains (Linux, GCC)                         | IEEE 1149.1 (Boundary Scan standard)                                         |
+
+# JTAG vs Other Hardware Debuggers
+
+| **Feature / Aspect**       | **JTAG (Joint Test Action Group)**                         | **Other Hardware Debuggers (e.g., SWD, BDM, ICE, OCD)**                     |
+|---------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **Standard**              | IEEE 1149.1 (widely adopted)                                | Varies: ARM's SWD, Motorola's BDM, AVR's OCD, full ICE, etc.               |
+| **Wiring**                | 4–5 pins: TCK, TMS, TDI, TDO, GND (optional TRST, SRST)     | Often fewer pins (e.g., SWD only uses 2 lines: SWDIO, SWCLK)               |
+| **Debug Access**          | Full access to CPU, memory, I/O, and boundary scan          | Similar access (CPU, memory, I/O), but boundary scan may be absent         |
+| **Speed**                 | Generally slower due to serial shifting of bits             | Often faster (e.g., SWD and ICE are optimized for speed)                   |
+| **Chain Support**         | Supports multiple devices in chain (daisy-chain TAPs)       | Typically single target per connection (e.g., SWD or BDM)                  |
+| **Hardware Complexity**   | Slightly more complex, more pins                            | Often simpler hardware (SWD is compact and efficient)                      |
+| **Common Architectures**  | ARM, MIPS, RISC-V, x86                                      | Varies:<br>SWD → ARM Cortex<br>BDM → Freescale/ColdFire<br>OCD → AVR       |
+| **Boundary Scan Support** | ✅ Yes (can test PCB interconnects)                         | ❌ Usually not supported                                                    |
+| **Bootloader/Flashing**   | ✅ Can be used                                              | ✅ Can be used                                                              |
+| **Debug Software Examples**| OpenOCD, SEGGER J-Link tools, Lauterbach                   | ST-Link (for SWD), Atmel ICE (for AVR), P&E (for BDM), MPLAB X (for PIC)  |
+| **Cost & Popularity**     | Widely supported, many low-cost tools (e.g., J-Link EDU)    | Some are proprietary or architecture-specific                              |
 
 
