@@ -144,6 +144,15 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 - TRST (Test Reset): Optional reset for TAP logic.
 - TDI/TDO: Serial input/output for data movement.
 
+
+
+
+
+
+
+
+
+
 # 📁 What is ELF in Linux?
 
 **ELF (Executable and Linkable Format)** is a standard file format used in Linux/Unix systems for:
@@ -221,23 +230,30 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 
 ---
 
+# ELF vs Other Binary Formats (PE/COFF, Mach-O)
+
+## 🔍 Format Comparison
+
+| **Aspect**                  | **ELF (Executable and Linkable Format)**                     | **Other Formats (e.g., PE/COFF for Windows, Mach-O for macOS)**             |
+|----------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------|
+| **Used By**                | Linux, UNIX-like systems (Android, FreeBSD, etc.)            | PE/COFF → Windows<br>Mach-O → macOS, iOS                                    |
+| **Associated Compilers**   | GCC, Clang, LLVM, etc. on Linux/Unix                         | MSVC → PE/COFF<br>Apple Clang → Mach-O                                      |
+| **Associated Linkers**     | `ld`, `gold`, `lld`, GNU `ld`                                | `link.exe` for Windows, `ld64` for macOS                                    |
+| **File Structure**         | Has headers, program header table, section header table, etc.| PE: DOS header, PE header, section table<br>Mach-O: header, load commands   |
+| **Dynamic Linking Support**| ✅ Supported via `.so` files (shared objects)                | ✅ `.dll` (Windows), `.dylib` (macOS)                                       |
+| **Static Linking Support** | ✅ `.a` (archives)                                            | ✅ `.lib` (Windows), `.a` (macOS)                                           |
+| **Symbol Table**           | `.symtab`, `.strtab`, `.dynsym` sections                     | Present, but structured differently in PE/Mach-O                            |
+| **Debugging Info Format**  | DWARF                                                        | Windows: PDB<br>macOS: dSYM                                                 |
+| **Custom Sections**        | ✅ Easy to add new sections                                  | PE: restrictive<br>Mach-O: moderate flexibility                             |
+| **Platform Independence**  | Designed for portability across architectures                | PE: Windows-specific<br>Mach-O: macOS/iOS-specific                          |
+| **Security Features**      | ASLR, NX, RELRO, PIE                                          | All support security features, vary by implementation                       |
+| **Toolchain Ecosystem**    | GNU/Linux tools: `readelf`, `objdump`, `strip`, etc.         | Windows: `dumpbin`, `sigcheck`, Visual Studio tools<br>macOS: `otool`      |
+
+---
 
 
 
-# JTAG vs Other Hardware Debuggers
 
-| **Feature / Aspect**       | **JTAG (Joint Test Action Group)**                         | **Other Hardware Debuggers (e.g., SWD, BDM, ICE, OCD)**                     |
-|---------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------------|
-| **Standard**              | IEEE 1149.1 (widely adopted)                                | Varies: ARM's SWD, Motorola's BDM, AVR's OCD, full ICE, etc.               |
-| **Wiring**                | 4–5 pins: TCK, TMS, TDI, TDO, GND (optional TRST, SRST)     | Often fewer pins (e.g., SWD only uses 2 lines: SWDIO, SWCLK)               |
-| **Debug Access**          | Full access to CPU, memory, I/O, and boundary scan          | Similar access (CPU, memory, I/O), but boundary scan may be absent         |
-| **Speed**                 | Generally slower due to serial shifting of bits             | Often faster (e.g., SWD and ICE are optimized for speed)                   |
-| **Chain Support**         | Supports multiple devices in chain (daisy-chain TAPs)       | Typically single target per connection (e.g., SWD or BDM)                  |
-| **Hardware Complexity**   | Slightly more complex, more pins                            | Often simpler hardware (SWD is compact and efficient)                      |
-| **Common Architectures**  | ARM, MIPS, RISC-V, x86                                      | Varies:<br>SWD → ARM Cortex<br>BDM → Freescale/ColdFire<br>OCD → AVR       |
-| **Boundary Scan Support** | ✅ Yes (can test PCB interconnects)                         | ❌ Usually not supported                                                    |
-| **Bootloader/Flashing**   | ✅ Can be used                                              | ✅ Can be used                                                              |
-| **Debug Software Examples**| OpenOCD, SEGGER J-Link tools, Lauterbach                   | ST-Link (for SWD), Atmel ICE (for AVR), P&E (for BDM), MPLAB X (for PIC)  |
-| **Cost & Popularity**     | Widely supported, many low-cost tools (e.g., J-Link EDU)    | Some are proprietary or architecture-specific                              |
+
 
 
