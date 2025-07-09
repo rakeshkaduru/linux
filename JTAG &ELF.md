@@ -237,8 +237,7 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 | **Aspect**                  | **ELF (Executable and Linkable Format)**                     | **Other Formats (e.g., PE/COFF for Windows, Mach-O for macOS)**             |
 |----------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------|
 | **Used By**                | Linux, UNIX-like systems (Android, FreeBSD, etc.)            | PE/COFF → Windows<br>Mach-O → macOS, iOS                                    |
-| **Associated Compilers**   | GCC, Clang, LLVM, etc. on Linux/Unix                         | MSVC → PE/COFF<br>Apple Clang → Mach-O                                      |
-| **Associated Linkers**     | `ld`, `gold`, `lld`, GNU `ld`                                | `link.exe` for Windows, `ld64` for macOS                                    |
+                                  |
 | **File Structure**         | Has headers, program header table, section header table, etc.| PE: DOS header, PE header, section table<br>Mach-O: header, load commands   |
 | **Dynamic Linking Support**| ✅ Supported via `.so` files (shared objects)                | ✅ `.dll` (Windows), `.dylib` (macOS)                                       |
 | **Static Linking Support** | ✅ `.a` (archives)                                            | ✅ `.lib` (Windows), `.a` (macOS)                                           |
@@ -246,8 +245,8 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 | **Debugging Info Format**  | DWARF                                                        | Windows: PDB<br>macOS: dSYM                                                 |
 | **Custom Sections**        | ✅ Easy to add new sections                                  | PE: restrictive<br>Mach-O: moderate flexibility                             |
 | **Platform Independence**  | Designed for portability across architectures                | PE: Windows-specific<br>Mach-O: macOS/iOS-specific                          |
-| **Security Features**      | ASLR, NX, RELRO, PIE                                          | All support security features, vary by implementation                       |
-| **Toolchain Ecosystem**    | GNU/Linux tools: `readelf`, `objdump`, `strip`, etc.         | Windows: `dumpbin`, `sigcheck`, Visual Studio tools<br>macOS: `otool`      |
+
+
 
 ---
 
