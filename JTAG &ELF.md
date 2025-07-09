@@ -236,8 +236,7 @@ This document explains the JTAG (Joint Test Action Group) architecture using the
 
 | **Aspect**                  | **ELF (Executable and Linkable Format)**                     | **Other Formats (e.g., PE/COFF for Windows, Mach-O for macOS)**             |
 |----------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------|
-| **Used By**                | Linux, UNIX-like systems (Android, FreeBSD, etc.)            | PE/COFF → Windows<br>Mach-O → macOS, iOS                                    |
-                                  |
+| **Used By**                | Linux, UNIX-like systems (Android, FreeBSD, etc.)            | PE/COFF → Windows<br>Mach-O → macOS, iOS                                                                    |
 | **File Structure**         | Has headers, program header table, section header table, etc.| PE: DOS header, PE header, section table<br>Mach-O: header, load commands   |
 | **Dynamic Linking Support**| ✅ Supported via `.so` files (shared objects)                | ✅ `.dll` (Windows), `.dylib` (macOS)                                       |
 | **Static Linking Support** | ✅ `.a` (archives)                                            | ✅ `.lib` (Windows), `.a` (macOS)                                           |
