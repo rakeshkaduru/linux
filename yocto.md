@@ -1,22 +1,22 @@
- WHAT IS YACTO?
-```
- Yocto is a tool to create your own custom Linux operating system
-```
-WHAT IS CUSTOM LINUX OS?
-```
-A Custom Linux OS means a Linux operating system that you build or modify yourself, so it includes only the features you need
-```
 
-🔧 WHY A NEED BUILD CUSTOM OS?
-```
-Because for embedded systems (like IoT, robots, or cars), you don’t need a full OS like Ubuntu.
-You need:
-Smaller size
-Faster Performance
-Specific Drivers
-Better Security
-Full Control
-```
+ # What is Yocto?
+
+> **Yocto** is a tool to create your own custom Linux operating system.
+
+# What is a Custom Linux OS?
+
+> A **Custom Linux OS** means a Linux operating system that you build or modify yourself, so it includes only the features you need.
+
+# 🔧 Why Build a Custom OS?
+
+Because for **embedded systems** (like IoT, robots, or cars), you don’t need a full OS like Ubuntu. You need:
+
+- ✅ **Smaller size**  
+- 🚀 **Faster Performance**  
+- 🧩 **Specific Drivers**  
+- 🔒 **Better Security**  
+- 🎛️ **Full Control**
+
 
 🧱 Yocto Project Architecture (Overview)
 
