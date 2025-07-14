@@ -1,7 +1,9 @@
 
  # What is Yocto?
 
-> **Yocto** is a tool to create your own custom Linux operating system.
+Yocto provides **open source** components and **tools**  
+to help developers create their own custom Linux distributions for **any hardware architecture**.
+
 
 # What is a Custom Linux OS?
 
