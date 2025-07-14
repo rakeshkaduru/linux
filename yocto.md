@@ -5,9 +5,9 @@ Yocto provides **open source** components and **tools**
 to help developers create their own custom Linux distributions for **any hardware architecture**.
 
 
-# What is a Custom Linux OS?
+# What is a Custom Linux Distributions?
 
-> A **Custom Linux OS** means a Linux operating system that you build or modify yourself, so it includes only the features you need.
+> A **Custom Linux Distributions** means a Linux operating system that you build or modify yourself, so it includes only the features you need.
 
 # 🔧 Why Build a Custom OS?
 
