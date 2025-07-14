@@ -7,7 +7,10 @@ to help developers create their own custom Linux distributions for **any hardwar
 
 # What is a Custom Linux Distributions?
 
-> A **Custom Linux Distributions** means a Linux operating system that you build or modify yourself, so it includes only the features you need.
+
+A **Custom Linux Distribution** is a Linux operating system that you build or modify yourself,  
+including only the features, drivers, and components you need for your specific use case.
+
 
 # 🔧 Why Build a Custom OS?
 
